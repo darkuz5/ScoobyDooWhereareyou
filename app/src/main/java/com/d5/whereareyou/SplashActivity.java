@@ -1,7 +1,9 @@
 package com.d5.whereareyou;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.widget.ImageView;
@@ -37,6 +39,17 @@ public class SplashActivity extends AppCompatActivity {
         anim.setDuration(5000);
         anim.setFillAfter(true);
         satelite.startAnimation(anim);
+
+
+        new android.os.Handler().postDelayed(
+                new Runnable() {
+                    public void run() {
+                        Log.i("tag", "This'll run 300 milliseconds later");
+                        Intent it = new Intent(getBaseContext(),LoginActivity.class);
+                        startActivity(it);
+                    }
+                },
+                5000);
 
     }
 }
