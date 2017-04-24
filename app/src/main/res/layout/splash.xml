@@ -40,6 +40,5 @@
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/saltelital_s"
         android:layout_centerVertical="true"
-        android:layout_toRightOf="@+id/imageView"
-        android:layout_toEndOf="@+id/imageView" />
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

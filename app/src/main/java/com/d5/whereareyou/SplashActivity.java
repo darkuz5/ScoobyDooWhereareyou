@@ -4,8 +4,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
-import android.view.animation.AnimationSet;
-import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 public class SplashActivity extends AppCompatActivity {
@@ -23,15 +21,22 @@ public class SplashActivity extends AppCompatActivity {
                         | View.SYSTEM_UI_FLAG_FULLSCREEN  );
 
         satelite = (ImageView) findViewById(R.id.imageView4);
-        Animation mover = AnimationUtils.loadAnimation(this, R.anim.layout);
+       /*Animation mover = AnimationUtils.loadAnimation(this, R.anim.layout);
+        Animation mover_after = AnimationUtils.loadAnimation(this, R.anim.animacion_after);
         mover.reset();
-        satelite.startAnimation(mover);
+       // satelite.startAnimation(mover);
 
 
         AnimationSet s = new AnimationSet(false);//false means don't share interpolators
         s.addAnimation(mover);
-        s.addAnimation(mover);
-        satelite.startAnimation(s);
+        s.addAnimation(mover_after);
+        s.setFillAfter(true);
+        satelite.startAnimation(s);*/
+
+        Animation anim = new MyAnimation(satelite, 400);
+        anim.setDuration(5000);
+        anim.setFillAfter(true);
+        satelite.startAnimation(anim);
 
     }
 }
