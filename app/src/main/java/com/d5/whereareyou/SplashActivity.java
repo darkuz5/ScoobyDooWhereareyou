@@ -1,5 +1,6 @@
 package com.d5.whereareyou;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.splash);
         ImageView satelite;
         getWindow().getDecorView().setSystemUiVisibility(
@@ -21,7 +23,9 @@ public class SplashActivity extends AppCompatActivity {
                         | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
                         | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                         | View.SYSTEM_UI_FLAG_FULLSCREEN  );
-
+        /*ActionBar actionbar =  getActionBar();
+        actionbar.setDisplayShowTitleEnabled(false);
+        actionbar.setDisplayShowHomeEnabled(false);*/
         satelite = (ImageView) findViewById(R.id.imageView4);
        /*Animation mover = AnimationUtils.loadAnimation(this, R.anim.layout);
         Animation mover_after = AnimationUtils.loadAnimation(this, R.anim.animacion_after);
@@ -47,6 +51,7 @@ public class SplashActivity extends AppCompatActivity {
                         Log.i("tag", "This'll run 300 milliseconds later");
                         Intent it = new Intent(getBaseContext(),LoginActivity.class);
                         startActivity(it);
+                        finish();
                     }
                 },
                 5000);
